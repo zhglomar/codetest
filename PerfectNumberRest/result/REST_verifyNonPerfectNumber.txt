@@ -1,0 +1,30 @@
+Tested RESTful Client Requests and Responses:
+
+Functionality:
+Verify a non perfect number and expected to get a false as response
+
+REQUEST:
+----------
+In HTTP:
+
+POST /perfnum/verify? HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+	"number":"137438691320"
+}
+
+----------
+In cURL:
+
+curl --location --request POST 'http://localhost:8080/perfnum/verify' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"number":"137438691320"
+}'
+
+==========
+RESPONSE:
+
+false

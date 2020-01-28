@@ -1,0 +1,68 @@
+Tested RESTful Client Requests and Responses:
+
+Functionality:
+Find perfect numbers in range
+
+REQUEST:
+----------
+In HTTP:
+
+POST /perfnum/findinrange? HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "low_limit": "100",
+    "high_limit": "100000000000000000000000000000000000000000000000000000"
+}
+
+----------
+In cURL:
+
+curl --location --request POST 'http://localhost:8080/perfnum/findinrange' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "low_limit": "100",
+    "high_limit": "100000000000000000000000000000000000000000000000000000"
+}'
+
+==========
+RESPONSE:
+
+[
+    {
+        "exponent": 5,
+        "value": 496,
+        "perfect": true
+    },
+    {
+        "exponent": 7,
+        "value": 8128,
+        "perfect": true
+    },
+    {
+        "exponent": 13,
+        "value": 33550336,
+        "perfect": true
+    },
+    {
+        "exponent": 17,
+        "value": 8589869056,
+        "perfect": true
+    },
+    {
+        "exponent": 19,
+        "value": 137438691328,
+        "perfect": true
+    },
+    {
+        "exponent": 31,
+        "value": 2305843008139952128,
+        "perfect": true
+    },
+    {
+        "exponent": 61,
+        "value": 2658455991569831744654692615953842176,
+        "perfect": true
+    }
+]
